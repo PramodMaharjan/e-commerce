@@ -19,7 +19,7 @@ const ProductDetails = ({ product, products }) => {
                     <div className='image-container'>
                         <img src={urlFor(image && image[index])} alt='Product-Image' className='product-detail-image' />
                     </div>
-                    <div className="small-images-container">
+                    <div className='small-images-container'>
                         {image?.map((item, i) => (
                             <img
                                 key={i}
@@ -89,7 +89,7 @@ export const getStaticPaths = async () => {
     }
 }
 export const getStaticProps = async ({ params: { slug } }) => {
-    const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
+    const query = `*[_type == 'product' && slug.current == '${slug}'][0]`;
     const productsQuery = '*[_type == "product"]';
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery)

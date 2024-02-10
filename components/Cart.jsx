@@ -58,18 +58,18 @@ const Cart = () => {
                     {cartItems.length >= 1 && cartItems.map((item, index) => (
                         <div className='product' key={item._id}>
                             <img src={urlFor(item?.image[0])} alt='Cart-Product-Image' className='cart-product-image' />
-                            <div className="item-desc">
-                                <div className="flex top">
+                            <div className='item-desc'>
+                                <div className='flex top'>
                                     <h5>{item.name}</h5>
                                     <h4>${item.price}</h4>
                                 </div>
-                                <div className="flex bottom">
+                                <div className='flex bottom'>
                                     <p className='quantity-desc'>
                                         <span className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></span>
                                         <span className='num'>{item.quantity}</span>
                                         <span className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></span>
                                     </p>
-                                    <button type='button' className="remove-item" onClick={() => onRemove(item)}>
+                                    <button type='button' className='remove-item' onClick={() => onRemove(item)}>
                                         <TiDeleteOutline />
                                     </button>
                                 </div>
